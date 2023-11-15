@@ -1,0 +1,422 @@
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+
+/* <=============== HERO SECTION ===============> */
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles with Darker Brown Gradient */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #d7b98e 0%, #5a432c 100%); /* Darker brown gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+nav .logo {
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a.nav-link {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
+}
+
+nav a.nav-link:hover, nav a.nav-link.active {
+    color: #ffcb77;
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #774c2a;
+    border-radius: 50px;
+    transition: left 0.3s ease, width 0.3s ease; /* Add transitions for left and width */
+    z-index: -1;
+
+}
+
+/* Hero Section Styles */
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    text-align: left;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    color: white;
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    width: 90%;
+    margin-bottom: 35px;
+}
+
+.hero-content .cta-btn {
+    cursor: pointer;
+    width: 20%;
+    padding: 20px;
+    color: rgb(234, 178, 84);
+    border: 1px solid rgb(234, 178, 84);
+    border-radius: 0.5ch;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    position: relative;
+    transition: filter 0.35s, transform 0.35s, opacity 0.35s;
+    opacity: 0.9;
+}
+
+.hero-content .cta-btn:hover {
+    filter: brightness(125%);
+    opacity: 1;
+}
+
+.hero-content .cta-btn:active {
+    transition: transform 0.1s;
+    transform: scale(0.95);
+}
+
+.hero-content .cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(190.82% 190.82% at 50% 100%, rgba(254, 173, 15, 1) 0%, rgba(168, 112, 64, 0.62) 18.09%);
+    opacity: 0.2;
+    filter: blur(2px);
+}
+
+#earth-container {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav .logo {
+        font-size: 20px; /* Adjust logo size for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically on smaller screens */
+        align-items: center;
+        margin-right: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Reduce spacing between items on smaller screens */
+    }
+
+    .nav-button {
+        margin-top: 10px;
+    }
+
+    #hero {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content, #earth-container {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+    }
+
+    #earth-container {
+        height: 50vh;
+    }
+}
+
+/* <=============== ABOUT BATIK SECTION ===============> */
+
+/* About Batik Section Styles */
+#about-batik {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 10%;
+    background: linear-gradient(to right, #c4a484 0%, #8f6b4c 100%); /* Darker gradient background */
+}
+
+.batik-image-container {
+    width: 40%; /* Smaller image size */
+    overflow: hidden;
+    margin-right: 30px; /* Space between image and content */
+}
+
+/* Zoom effect on hover for the image */
+.batik-image {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.batik-image:hover {
+    transform: scale(1.05); /* Zoom effect */
+}
+
+.batik-content {
+    width: 60%; /* Adjusted for smaller image */
+    padding-left: 60px; /* Increased padding on the left side for title and description */
+}
+
+.batik-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    color: #5a432c;
+    margin-bottom: 20px;
+}
+
+.batik-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 25px; /* Space above the button */
+}
+
+/* Button styles (similar to hero section) */
+.batik-content .cta-btn-about {
+    display: inline-block; /* Ensure button visibility */
+    cursor: pointer;
+    width: 20%; /* Adjusted button width */
+    padding: 20px;
+    color: rgb(234, 178, 84);
+    border: 1px solid rgb(234, 178, 84);
+    border-radius: 0.5ch;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    position: relative;
+    transition: filter 0.35s, transform 0.35s, opacity 0.35s;
+    opacity: 0.9;
+}
+
+.batik-content .cta-btn-about:hover {
+    filter: brightness(125%);
+    opacity: 1;
+}
+
+.batik-content .cta-btn-about::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(190.82% 190.82% at 50% 100%, rgba(254, 173, 15, 1) 0%, rgba(168, 112, 64, 0.62) 18.09%);
+    opacity: 0.2;
+    filter: blur(2px);
+}
+
+.batik-content .cta-btn-about:active {
+    transition: transform 0.1s;
+    transform: scale(0.95);
+}
+
+/* Responsive Adjustments for About Section */
+@media (max-width: 768px) {
+    #about-batik {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .batik-image-container, .batik-content {
+        width: 100%;
+    }
+
+    .batik-content {
+        padding-left: 0;
+    }
+
+    .batik-content .cta-btn {
+        width: 50%; /* Larger button for mobile */
+    }
+}
+
+/* <=============== BATIK CAROUSEL SECTION ===============> */
+
+/* Section Styling */
+.batik-showcase {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: linear-gradient(to right, #c4a484 0%, #8f6b4c 100%);
+}
+
+/* Title Styling */
+.showcase-title {
+  font-family: 'Cinzel', sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  position: relative;
+}
+
+/* Carousel Item */
+.carousel-item {
+  margin: 10px;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+/* Slick Customization */
+.slick-prev, .slick-next {
+  font-size: 24px; /* Adjust size as needed */
+  color: white; /* Arrow color */
+  background: #8B4513; /* Dark brown background */
+  border-radius: 50%; /* Make it rounded */
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-prev {
+  position: absolute;
+  left: -50px; /* Adjust position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-next {
+  position: absolute;
+  right: -50px; /* Adjust position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-dots {
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Dots */
+.slick-dots li.slick-active button {
+  background: #8B4513; /* Dark brown color for active dot */
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  font-size: 0; /* Hides the number inside the button */
+  line-height: 0;
+  display: block;
+  width: 10px; /* Dot size */
+  height: 10px; /* Dot size */
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: #333; /* Dot color */
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.slick-dots li.slick-active button {
+  background: #8B4513; /* Active dot color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel-item {
+      margin: 5px;
+  }
+
+  .showcase-title {
+      font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
